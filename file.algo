@@ -1,0 +1,21 @@
+def count_words_and_vowels(sentence):
+    word_count = 0
+    vowel_count = 0
+    in_word = 0
+
+    vowels = set("AEIOUaeiou")
+
+    for char in sentence:
+        if char.isalpha():
+            if in_word == 0:
+                word_count += 1
+                in_word = 1
+            if char in vowels:
+                vowel_count += 1
+        else:
+            in_word = 0
+    print("Number of words:", word_count)
+    print("Number of vowels:", vowel_count)
+
+sentence = input("Enter a sentence ending with a period: ")
+count_words_and_vowels(sentence)
